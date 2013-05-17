@@ -1,0 +1,7 @@
+# Tracing options for the com.cloud.diagram plug-in
+
+# Common issues
+com.cloud.diagram/debug=false
+
+# Visual IDs
+com.cloud.diagram/debug/visualID=false

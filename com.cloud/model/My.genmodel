@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.cloud/src" modelPluginID="com.cloud" modelName="My"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>My.ecore</foreignModel>
+  <genPackages prefix="My" disposableProviderFactory="true" ecorePackage="My.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="My.ecore#//ColumnType">
+      <genEnumLiterals ecoreEnumLiteral="My.ecore#//ColumnType/Char"/>
+      <genEnumLiterals ecoreEnumLiteral="My.ecore#//ColumnType/Number"/>
+      <genEnumLiterals ecoreEnumLiteral="My.ecore#//ColumnType/Date"/>
+    </genEnums>
+    <genClasses ecoreClass="My.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//Column">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Column/primary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Column/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Column/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//Column/unique"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//Table">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Table/columns"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//Database">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Database/tables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//Database/fkrelations"/>
+    </genClasses>
+    <genClasses ecoreClass="My.ecore#//FKRelation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference My.ecore#//FKRelation/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference My.ecore#//FKRelation/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//FKRelation/label"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
